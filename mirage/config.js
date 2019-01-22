@@ -1,6 +1,6 @@
 export default function () {
 	this.namespace = 'v0';
-	this.post('/login', (schem, request) => {
+	this.post('/AccountValidation', (schem, request) => {
 		console.log(schem)
 		console.log(request);
 		console.log(JSON.parse(request.requestBody))
@@ -12,7 +12,7 @@ export default function () {
 		password = requestBody.data.attributes.password;
 
 
-		if (email === 'alex' && password === "aa") {
+		if ((email === 'alex' || email === 'frank') && password === "aa") {
 			return {
 				"error": null,
 				"result": {
