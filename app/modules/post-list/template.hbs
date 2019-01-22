@@ -1,0 +1,50 @@
+<section class="container">
+	<h2>Post List</h2>
+	<table class="table table-striped text-center table-hover">
+		<thead class="thead-light">
+			<th>Id</th>
+			<th>Title</th>
+			<th>SubTitle</th>
+			<th>Content</th>
+			<th>Comments</th>
+		</thead>
+		<tbody>
+			{{#each model as |p|}}
+				<tr>
+					<td>{{p.id}}</td>
+					<td>{{p.title}}</td>
+					<td>{{p.subTitle}}</td>
+					<td local-class="content">
+						<p>{{p.content}}</p>
+					</td>
+					<td>
+						<button type="button" class="btn btn-info" {{action "showComment" p.comments}}>{{p.comments.length}}</button>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<h3>评论内容</h3>
+	{{#if comments}}
+		<table class="table table-striped text-center table-hover">
+			<thead class="thead-dark">
+				<th>Id</th>
+				<th>AccountName</th>
+				<th>Content</th>
+			</thead>
+			<tbody>
+				{{#each comments as |c|}}
+					<tr>
+						<td>{{c.id}}</td>
+						<td>{{c.accountName}}</td>
+						<td>{{c.content}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	{{else}}
+		<div class="alert alert-success">
+			No Data.
+		</div>
+	{{/if}}
+</section>

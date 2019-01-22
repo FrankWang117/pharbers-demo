@@ -1,0 +1,11 @@
+@import "ember-bootstrap/bootstrap";
+
+html,
+body {
+	height: 100%;
+
+}
+
+body> :global(.ember-view) {
+	height: 100%;
+}

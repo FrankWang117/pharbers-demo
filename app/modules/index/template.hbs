@@ -1,0 +1,25 @@
+<section class="text-center" local-class="container-login">
+	{{!-- <section local-class="login"> --}}
+	<section local-class="form-signin">
+		<img class="mb-4" src="/images/pharbers_logo_color.png" alt="" width="92" height="100">
+		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		<label for="inputEmail" class="sr-only">Email address</label>
+		{{!-- <input local-class="form-control" type="email" id="inputEmail" class="form-control" placeholder="Email address"
+		 required autofocus> --}}
+		{{input local-class="form-control" value=email type="email" id="inputEmail" class="form-control" placeholder="Email address"
+		 required=true autofocus=true}}
+		<label for="inputPassword" class="sr-only">Password</label>
+		{{!-- <input local-class="form-control" type="password" id="inputPassword" class="form-control mb-3" placeholder="Password"
+		 required> --}}
+		{{input local-class="form-control" value=password type="password" id="inputPassword" class="form-control mb-3" placeholder="Password"
+		 required=true}}
+		{{!-- <div local-class="checkbox" class="mb-3">
+			<label>
+				<input type="checkbox" value="remember-me"> Remember me
+			</label>
+		</div> --}}
+		<button class="btn btn-lg btn-primary btn-block" type="button" {{action 'submit'}}>Sign in</button>
+		<p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+	</section>
+	{{!-- </section> --}}
+</section>
