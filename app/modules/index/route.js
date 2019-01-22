@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
-import { isEmpty } from '@ember/utils';
+import $ from 'jquery';
+
 export default Route.extend({
 	actions: {
 		submit() {
@@ -20,7 +21,7 @@ export default Route.extend({
 					}
 				};
 
-				$.post('/v0/AccountValidation', JSON.stringify(dataSend), (data, status) => {
+				$.post('/v0/AccountValidation', JSON.stringify(dataSend), (data) => {
 					if (data.error !== null) {
 						window.alert(data.error)
 					} else {

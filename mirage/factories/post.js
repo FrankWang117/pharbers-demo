@@ -1,4 +1,4 @@
-import { Factory, trait } from 'ember-cli-mirage';
+import { Factory, faker, trait } from 'ember-cli-mirage';
 
 export default Factory.extend({
 	'title': faker.name.title,
